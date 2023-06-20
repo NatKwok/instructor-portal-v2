@@ -33,22 +33,7 @@ export default function Index({ auth, book }) {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">
                             <form onSubmit={submit}>
-                                <div className="mb-4">
-                                    <label htmlFor="isbn">ISBN: </label>
-                                    <input
-                                        type="number"
-                                        name="isbn"
-                                        id="isbn"
-                                        defaultValue={book.isbn}
-                                        className="w-20 px-4 py-2"
-                                        onChange={(e) =>
-                                            setData("isbn", e.target.value)
-                                        }
-                                    />
-                                    <span className="text-red-600">
-                                        {errors.isbn}
-                                    </span>
-                                </div>
+
                                 <div className="mb-4">
                                     <label htmlFor="title">Title: </label>
                                     <input
