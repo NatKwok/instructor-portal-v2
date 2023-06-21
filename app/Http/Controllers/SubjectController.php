@@ -8,6 +8,8 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\RedirectResponse;
 use Mockery\Matcher\Subset;
+use Illuminate\Support\Facades\Auth;
+
 
 class SubjectController extends Controller
 {
@@ -17,7 +19,7 @@ class SubjectController extends Controller
     public function index()
     {
         return Inertia::render('Subjects/Index', [
-            'subjects' => Subject::with('user:id,name')->latest()->get(),
+            'subjects' => Subject::with('user:id,name')->where('user_id', Auth::user()->id)->latest()->get(),
             'message' => session('message'),
 
         ]);

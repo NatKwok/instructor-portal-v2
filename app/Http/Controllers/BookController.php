@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
@@ -16,7 +17,7 @@ class BookController extends Controller
     public function index(): Response
     {
         return Inertia::render('Books/Index', [
-            'books' => Book::with('user:id,name')->latest()->get(),
+            'books' => Book::with('user:id,name')->where('user_id', Auth::user()->id)->latest()->get(),
             'message' => session('message'),
 
         ]);
