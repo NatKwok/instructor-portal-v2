@@ -12,6 +12,8 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
+        dob:'',
+        cell:'',
     });
 
     useEffect(() => {
@@ -97,6 +99,38 @@ export default function Register() {
                     />
 
                     <InputError message={errors.password_confirmation} className="mt-2" />
+                </div>
+                <div className="mt-4">
+                    <InputLabel htmlFor="dob" value="Date of Birth" />
+
+                    <TextInput
+                        id="dob"
+                        type="date"
+                        name="dob"
+                        value={data.dob}
+                        className="mt-1 block w-full"
+                        autoComplete="dob"
+                        onChange={(e) => setData('dob', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.dob} className="mt-2" />
+                </div>
+                <div className="mt-4">
+                    <InputLabel htmlFor="cell" value="Phone Number" />
+
+                    <TextInput
+                        id="cell"
+                        type="number"
+                        name="cell"
+                        value={data.cell}
+                        className="mt-1 block w-full"
+                        autoComplete="cell"
+                        onChange={(e) => setData('cell', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.dob} className="mt-2" />
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
