@@ -130,7 +130,7 @@ export default function Register() {
                         required
                     />
 
-                    <InputError message={errors.dob} className="mt-2" />
+                    <InputError message={errors.cell} className="mt-2" />
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
